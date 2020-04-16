@@ -26,6 +26,14 @@ $('#comments').click(function(){
 });
 
 // button 4 - get all posts from user with id of 2
+$('#userid2').click(function(){
+    $.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', {userID: 2}, function(userid2){
+        var post = $('<p>' + JSON.stringify(userid2) + '</p>');
+        $("#ex4").append(post);
+    });
+});
+
+// button 5 - create a new post
 
 // hide elements when rendered - works for every button
 $('.btn').click(function(){
