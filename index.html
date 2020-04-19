@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Exercise 1 - Buttons</title>
 </head>
@@ -12,8 +11,9 @@
     <h1 class="text-center">Branson's Ajax + Rest APIs Lab</h1>
 
     <div class="container-fluid">
+        <!-- button 1 - get all posts -->
         <section>
-            <div class="row" id="ex1">
+            <div class="row text-center align-items-center justify-content-center" id="ex1">
                 <div class="col-6 my-3 text-center">
                     <button id="allposts" class="btn btn-primary active" role="button" aria-pressed="true">Show All Posts</button>
                 </div>
@@ -23,8 +23,9 @@
             </div>
         </section>
 
+        <!-- button 2 - get post 10 -->
         <section>
-            <div class="row" id="ex2">
+            <div class="row text-center align-items-center justify-content-center" id="ex2">
                 <div class="col-6 my-3 text-center">
                     <button id="post10" class="btn btn-primary active" role="button" aria-pressed="true">Show Post 10</button>
                 </div>
@@ -34,10 +35,11 @@
             </div>
         </section>
 
+        <!-- button 3 - get comments from post id of 12 -->
         <section>
-            <div class="row" id="ex3">
+            <div class="row text-center align-items-center justify-content-center" id="ex3">
                 <div class="col-6 my-3 text-center">
-                    <button id="comments" class="btn btn-primary active" role="button" aria-pressed="true">Show Comments</button>
+                    <button id="comments" class="btn btn-primary active" role="button" aria-pressed="true">Show Post 12 Comments</button>
                 </div>
                 <div class="col-6 my-3 text-center">
                     <button class="btn btn-danger active" role="button" aria-pressed="true">Hide Comments</button>
@@ -45,8 +47,9 @@
             </div>
         </section>
 
+        <!-- button 4 - get all posts from user with id of 2 -->
         <section>
-            <div class="row" id="ex4">
+            <div class="row text-center align-items-center justify-content-center" id="ex4">
                 <div class="col-6 my-3 text-center">
                     <button id="userid2" class="btn btn-primary active" role="button" aria-pressed="true">Show User 2 Posts</button>
                 </div>
@@ -56,10 +59,86 @@
             </div>
         </section>
 
+        <!-- button 5 - create a new post and log the ID generated for it by the server -->
+        <section>
+            <div class="row text-center align-items-center justify-content-center" id="ex5">
+                <div class="col-6 my-3 text-center">
+                    <button id="newpost" class="btn btn-primary active" role="button" aria-pressed="true">Create New Post</button>
+                </div>
+                <div class="col-6 my-3 text-center">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide New Post</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- button 6 (covers 2 problems) - replace the post with ID of 12 & replace the title of post with ID of 12 -->
+        <section>
+            <div class="row text-center align-items-center justify-content-center" id="ex6">
+                <div class="col-6 my-3 text-center">
+                    <button id="replacepost" class="btn btn-primary active" role="button" aria-pressed="true">Replace ID and Title</button>
+                </div>
+                <div class="col-6 my-3 text-center">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide Replacement</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- button 7 - delete the post with ID of 12 and render a success message -->
+        <section>
+            <div class="row text-center align-items-center justify-content-center">
+                <div class="col-6 my-3">
+                    <button id="deletepost" class="btn btn-primary active" role="button" aria-pressed="true">Delete Post with ID of 12</button>
+                </div>
+                <div class="col-6 my-3 text-center">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide Delete Post</button>
+                </div>
+                <div id="ex7"></div>
+            </div>
+        </section>
+
+        <!-- Display a list of posts -->
+        <section>
+            <div class="row text-center align-items-center justify-content-center">
+                <div class="col-6 my-3">
+                    <button id="displaylist" class="btn btn-primary active" role="button" aria-pressed="true">Show List of Posts</button>
+                </div>
+                <div class="col-6 my-3">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide List</button>
+                </div>
+                <div id="ex8">
+                    <ul></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- When the user clicks on a post, display all the comments from that post -->
+        <section>
+            <div class="row" id="ex9">
+                <div class="col-6 my-3 text-center">
+                    <button id="displaycomments" class="btn btn-primary active" role="button" aria-pressed="true">Show Comments of Post</button>
+                </div>
+                <div class="col-6 my-3 text-center">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide Comments of Post</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Display a link back to all of the posts -->
+        <section>
+            <div class="row text-center align-items-center justify-content-center" id="ex10">
+                <div class="col-6 my-3 text-center">
+                    <button id="displaylink" class="btn btn-primary active" role="button" aria-pressed="true">Show Link to All Posts</button>
+                </div>
+                <div class="col-6 my-3 text-center">
+                    <button class="btn btn-danger active" role="button" aria-pressed="true">Hide Link</button>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="exercise1.js"></script>
     
 </body>
 </html>

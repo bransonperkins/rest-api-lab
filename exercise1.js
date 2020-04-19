@@ -33,9 +33,75 @@ $('#userid2').click(function(){
     });
 });
 
-// button 5 - create a new post
+// button 5 - create a new post and log the ID generated for it by the server
+$('#newpost').click(function(){
+    $.post('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts',{userID: 15, title: "Create New Post Test", body: "Create a new post and log the ID generated for it by the server."}, function(createpost){
+        var generatedID = $('<p>' + JSON.stringify(createpost.id) + '</p>');
+        $("#ex5").append(generatedID);
+    });
+});
+
+// button 6 (covers 2 problems) - replace the post with ID of 12 & replace the title of post with ID of 12
+$('#replacepost').click(function(){
+    $.ajax({
+        method: 'POST',
+        url: 'https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts',
+        data: {
+            id: 12,
+            title: "Replacing old post",
+            body: "Branson's post now"
+        },
+        success: function(data){
+            var replace12 = $('<p>' + JSON.stringify(data) + '</p>');
+            $('#ex6').append(replace12);
+        }
+    });
+});
+
+// button 7 - delete the post with ID of 12 and render a success message
+$('#deletepost').on('click', function() {
+    $.ajax({
+        method: 'DELETE',
+        url: 'https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts',
+        data: {
+            id: 12,
+        },
+        complete: function(response) {
+            console.log(response.responseJSON)
+            $('#ex7').append('<p>Success!</p>');
+        }
+    })
+})
+
+// Display a list of posts
+$('#displaylist').click(function(){
+    $.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', function(posts){
+        posts.forEach(function(post){
+            var list = $('<li>' + JSON.stringify(post) + '</li>');
+            $('#ex8').append(list).css("text-align: center;");
+        })
+    });
+});
+
+// When the user clicks on a post, display all the comments from that post
+$("#displaycomments").click(function(){
+    $.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/comments', {postID: 7}, function(data){
+        var comments = $('<p>' + JSON.stringify(data) + '</p>')
+        $('#ex9').append(comments);
+      });
+  });
+
+// Display a link back to all of the posts
+$("#displaylink").click(function(){
+    $.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', function(){
+        var showlink = $("<a href='https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts'>All Posts</a>")
+        $('#ex10').append(showlink);
+      });
+  });
 
 // hide elements when rendered - works for every button
 $('.btn').click(function(){
     $('p').hide();
+    $('li').hide();
+    $('a').hide();
 });
